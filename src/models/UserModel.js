@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema(
     {
         HoTen: { type: String, require: true },
+        AnhDaiDien: { type: String },
         Email: { type: String, require: true, unique: true },
         MatKhau: { type: String, require: true },
         isAdmin: { type: Boolean, default: false, require: true },
