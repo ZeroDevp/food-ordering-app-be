@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const createFood = (newFood) => {
     return new Promise(async (resolve, reject) => {
-        const { TenMonAn, LoaiMonAn, HinhAnh, GiaMonAn, DanhGia, MoTa } = newFood;
+        const { TenMonAn, LoaiMonAn, HinhAnh, GiaMonAn, DanhGia, MoTa, GiamGia } = newFood;
         try {
             const checkFood = await Food.findOne({
                 TenMonAn: TenMonAn,
@@ -20,7 +20,8 @@ const createFood = (newFood) => {
                 HinhAnh,
                 GiaMonAn,
                 DanhGia,
-                MoTa
+                MoTa,
+                GiamGia
             });
             if (createFood) {
                 resolve({

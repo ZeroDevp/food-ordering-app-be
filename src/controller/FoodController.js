@@ -2,7 +2,7 @@ const FoodService = require('../services/FoodService')
 
 const createFood = async (req, res) => {
     try {
-        const { TenMonAn, LoaiMonAn, HinhAnh, GiaMonAn, DanhGia, MoTa } = req.body;
+        const { TenMonAn, LoaiMonAn, HinhAnh, GiaMonAn, DanhGia, MoTa, GiamGia } = req.body;
 
         // // Kiểm tra các trường đầu vào
         if (!TenMonAn || !LoaiMonAn || !HinhAnh || !GiaMonAn || !DanhGia) {
@@ -84,7 +84,7 @@ const deleteFood = async (req, res) => {
 const getAllFood = async (req, res) => {
     try {
         const { limit, page, sort, filter } = req.query
-        const response = await FoodService.getAllFood(Number(limit) || 8, Number(page) || 0, sort, filter);
+        const response = await FoodService.getAllFood(Number(limit) || null, Number(page) || 0, sort, filter);
         return res.status(200).json(response);
     } catch (e) {
         return res.status(404).json({
