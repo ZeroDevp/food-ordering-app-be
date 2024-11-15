@@ -3,10 +3,10 @@ const orderSchema = new mongoose.Schema(
     {
         DonHang: [
             {
-                TenDonHang: { type: String, required: true },
+                TenMonAn: { type: String, required: true },
                 SoLuong: { type: Number, require: true },
                 HinhAnh: { type: String, require: true },
-                Gia: { type: Number, require: true },
+                GiaMonAn: { type: Number, require: true },
                 food: {
                     type: mongoose.Schema.Types.ObjectId,
                     ref: "Food",
