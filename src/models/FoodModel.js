@@ -16,6 +16,7 @@ const foodSchema = new mongoose.Schema(
         BanChay: { type: Boolean, default: false },
         hotSale: { type: Boolean, default: false },
         MoiRaMat: { type: Boolean, default: false },
+
     },
     {
         timestamps: true

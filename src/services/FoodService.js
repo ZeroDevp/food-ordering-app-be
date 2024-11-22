@@ -21,7 +21,7 @@ const createFood = (newFood) => {
                 GiaMonAn,
                 DanhGia,
                 MoTa,
-                GiamGia
+                GiamGia: Number(GiamGia)
             });
             if (createFood) {
                 resolve({

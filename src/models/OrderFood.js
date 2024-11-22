@@ -7,6 +7,7 @@ const orderSchema = new mongoose.Schema(
                 SoLuong: { type: Number, require: true },
                 HinhAnh: { type: String, require: true },
                 GiaMonAn: { type: Number, require: true },
+                GiamGia: { type: Number },
                 food: {
                     type: mongoose.Schema.Types.ObjectId,
                     ref: "Food",
@@ -15,11 +16,11 @@ const orderSchema = new mongoose.Schema(
             },
         ],
         DiaChiGiaoHang: {
-            Hoten: { type: String, required: true },
-            DiaChi: { type: String, required: true },
+            HoTen: { type: String, required: true },
+            Diachi: { type: String, required: true },
             ThanhPho: { type: String, required: true },
             Huyen: { type: String, required: true },
-            phuong: { type: String, required: true },
+            Phuong: { type: String, required: true },
             DienThoai: { type: Number, required: true },
         },
         PhuongThucThanhToan: { type: String, required: true },
@@ -39,4 +40,4 @@ const orderSchema = new mongoose.Schema(
     }
 );
 const Order = mongoose.model("Order", orderSchema);
-module.exports = Food;
+module.exports = Order;
