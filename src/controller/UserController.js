@@ -61,7 +61,8 @@ const loginUser = async (req, res) => {
         res.cookie('refresh_token', refresh_token, {
             httpOnly: true,
             secure: false,
-            samsite: 'strict'
+            samsite: 'strict',
+            // path: '/'
         })
         return res.status(200).json({ ...newResponse, refreshToken });
     } catch (e) {
@@ -143,7 +144,7 @@ const getDetailUser = async (req, res) => {
 
 const refreshToken = async (req, res) => {
     try {
-        const token = req.cookies.refresh_token;
+        let token = req.cookies.refresh_token;
         if (!token) {
             return res.status(200).json({
                 status: 'ERR',

@@ -11,9 +11,14 @@
 // const port = process.env.PORT || 3001
 
 // app.use(cors())
-// app.use(bodyParser.json({ limit: '50mb' }));
-// app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-// app.use(cookieParser())
+
+// // app.use(bodyParser.json({ limit: '50mb' }));
+// // app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+// // app.use(cookieParser())
+
+// app.use(express.json({ limit: '50mb' }));
+// app.use(express.urlencoded({ limit: '50mb', extended: true }));
+// app.use(cookieParser());
 
 // routes(app)
 
@@ -36,16 +41,22 @@ const cors = require('cors');
 dotenv.config()
 const app = express();
 const routes = require('./routes');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const port = process.env.PORT || 3001;
 db.connect();
 
 app.use(cors())
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+
+// app.use(bodyParser.json({ limit: '50mb' }));
+// app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+// app.use(cookieParser());
+
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use(cookieParser());
 routes(app);
+
 
 
 app.get('/', (req, res) => {
